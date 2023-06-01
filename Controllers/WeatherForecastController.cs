@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace NET.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
@@ -31,11 +31,17 @@ public class WeatherForecastController : ControllerBase
     }
 
    [HttpGet(Name = "GetWeatherForecast")]
+    [Route("Get/weatherforecast")]
+    [Route("Get/weatherforecast2")]
+    [Route("[action]")] //para tomar el nombre del metodo
     public IEnumerable<WeatherForecast> Get()
     {
         return ListWeatherForecast;
     }
 
+    [Route("Post/weatherforecast")]
+    [Route("Post/weatherforecast2")]
+    [Route("[action]")] 
     [HttpPost]
     public IActionResult Post(WeatherForecast weatherForecast)
     {
