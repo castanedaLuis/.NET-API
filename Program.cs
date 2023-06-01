@@ -20,7 +20,10 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.UseWelcomePage();
+//app.UseWelcomePage();
+
+//Utilizando el middleware que creamos
+app.UseTimeMiddleware();
 
 app.MapControllers();
 
