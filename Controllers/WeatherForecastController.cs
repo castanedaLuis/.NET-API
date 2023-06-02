@@ -12,6 +12,7 @@ public class WeatherForecastController : ControllerBase
     };
 
     private readonly ILogger<WeatherForecastController> _logger;
+
     private static List<WeatherForecast> ListWeatherForecast = new List<WeatherForecast>();
 
     public WeatherForecastController(ILogger<WeatherForecastController> logger)
@@ -36,6 +37,7 @@ public class WeatherForecastController : ControllerBase
     [Route("[action]")] //para tomar el nombre del metodo
     public IEnumerable<WeatherForecast> Get()
     {
+        _logger.LogInformation("Retornando la lista de weatherforecast");
         return ListWeatherForecast;
     }
 
