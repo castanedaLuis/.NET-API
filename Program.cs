@@ -27,7 +27,7 @@ app.UseAuthorization();
 //app.UseWelcomePage();
 
 //Utilizando el middleware que creamos
-//app.UseTimeMiddleware();
+app.UseTimeMiddleware();
 
 app.MapControllers();
 
